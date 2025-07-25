@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: busybox-deployment
+  labels:
+    app: my-busybox-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-busybox-app
+  template:
+    metadata:
+      labels:
+        app: my-busybox-app
+    spec:
+      containers:
+      - name: busybox-container
+        image: docker/busybox:stable-glibc # <--- IMPORTANT: Your image here
+        ports:
+        - containerPort: 80
