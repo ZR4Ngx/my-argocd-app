@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: busybox-container
-        image: docker/busybox:stable-glibc # <--- IMPORTANT: Your image here
+        image: busybox:1.36.1-glibc # <--- IMPORTANT: Your image here
         ports:
         - containerPort: 80
