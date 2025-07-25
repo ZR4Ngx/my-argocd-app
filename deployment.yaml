@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: busybox-deployment
+  name: my-busybox-app
   labels:
     app: my-busybox-app
 spec:
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: busybox-container
-        image: busybox:1.36.1-glibc # <--- IMPORTANT: Your image here
+        image: docker/busybox:latest # <--- IMPORTANT: Your image here
         ports:
         - containerPort: 80
