@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-busybox-app
+  name: my-ubuntu-app
   labels:
-    app: my-busybox-app
+    app: my-ubuntu-app
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-busybox-app
+      app: my-ubuntu-app
   template:
     metadata:
       labels:
-        app: my-busybox-app
+        app: my-ubuntu-app
     spec:
       containers:
-      - name: busybox-container
-        image: busybox:1.36.1-glibc # <--- IMPORTANT: Your image here
+      - name: ubuntu-container
+        image: ubuntu:25.04 # <--- IMPORTANT: Your image here
         ports:
         - containerPort: 80
