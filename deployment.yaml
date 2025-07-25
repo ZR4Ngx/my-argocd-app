@@ -17,5 +17,7 @@ spec:
       containers:
       - name: ubuntu-container
         image: ubuntu:25.04 # <--- IMPORTANT: Your image here
+        command: ["sleep", "infinity"] # Keeps the container running
+        
         ports:
         - containerPort: 80
